@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry</title>
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+  <!-- Splash -->
+
+  <div id="intro" class="fixed flex z-20 left-0 w-full h-full bg-sky-400 ">
+    <div id="logo-header" class=" flex mx-auto items-center">
+      <span id="logo" class="flex mx-auto items-center">
+        <img src="media/inne.jpg.jpeg" alt="">
+      </span>
+    </div>
+  </div>
+
+  <!-- Header Start -->
+  <header class="bg-transparent absolute top-0 left-0 w-full items-center z-10">
+    <div class="container">
+      <div class="">
+        <div class="items-center px-4">
+          <button id="keranjang" name="keranjang" type="button" class="block fixed top-4 right-3" onclick="cart()">
+            <img class="h-16" id="keranjangEx" src="media/keranjang.png" alt="keranjang" srcset="">
+          </button>
+
+          <nav id="nav-menu"
+            class="hidden fixed py-10 bg-white rounded-xl rounded-tr-none w-auto lg:w-[700px] top-20 right-4 shadow-sm shadow-sky-600">
+            <h2 class=" font-bold pl-4 text-lg">Daftar Keranjang Laundry:</h2>
+
+            <ul class="text-lg" id="list"></ul>
+
+            <div class="pt-4 pl-4 text-lg">Total: Rp.<span id="total_final">0</span></div>
+
+            <div class="mx-auto text-center items-center">
+              <p class="pt-4 text-lg">Bayar dengan:</p>
+              <div class=" flex flex-wrap">
+                <a class="mx-auto" href="https://www.dana.id" target="_blank">
+                  <img class="h-20" src="media/dana.jpg" alt="dana">
+                </a>
+                <a class="mx-auto" href="https://gopay.co.id" target="_blank">
+                  <img class="h-20" src="media/gopay.jpg" alt="gopay">
+                </a>
+                <a class="mx-auto" href="https://www.ovo.id" target="_blank">
+                  <img class=" h-20" src="media/ovo.jpg" alt="ovo">
+                </a>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <!-- Content -->
+  <main>
+    <div class="bg-gray-100 font-sans">
+      <div class="lg:flex lg:flex-wrap pb-0 lg:pb-8">
+
+        <!-- Header -->
+        <div
+          class="flex flex-wrap lg:w-1/3 h-60 lg:h-screen text-white items-center text-center mx-auto lg:rounded-r-2xl bg-transparent bg-gradient-to-b from-cyan-800 to-cyan-500 shadow-sm shadow-slate-500">
+          <div class="items-center flex flex-wrap text-center pt-2 mx-auto lg:pt-10">
+
+            <img class="mx-auto lg:h-64 h-40" src="media/mesin.jpg" alt="logo laundry" srcset="">
+            <div class="text-center mx-auto">
+              <h1 class="text-5xl font-bold ">
+                Laundry Natya's
+              </h1>
+              <h2 class="font-semibold text-center">Serahkan kotormu pada kami</h2>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class=" mx-auto lg:w-1/3">
+          <h2 class="py-4 mt-4 text-center font-extrabold text-3xl text-cyan-900">Pilihan Laundry</h2>
+          <div class="w-auto mx-4 bg-white items-center h-96 text-center rounded-lg shadow-sm shadow-sky-900">
+            <div class=" pt-16">
+              <label for="jenisKain">Jenis Laundry:</label><br>
+              <select class="w-40 h-10 box-border border-2 border-slate-500 border-solid rounded-lg" name="jenisKain"
+                id="jenisKain">
+                <option value="Pakaian">Pakaian</option>
+                <option value="Selimut">Selimut</option>
+                <option value="Karpet">Permadani</option>
+              </select>
+            </div>
+
+            <div class=" pt-6">
+              <label for="beratLaundry">Berat:</label><br>
+              <input class="w-40 h-10 box-border border-2 border-slate-500 border-solid rounded-lg" name="beratLaundry"
+                type="text" id="beratLaundry">
+              <span class="absolute mt-2 ml-1">kg</span>
+            </div>
+            <div class=" pt-8">
+              <button class=" m-auto px-7 py-3 bg-cyan-600 rounded-lg text-white hover:bg-cyan-800" name="proses"
+                onclick="addList(), cart()" value="tambah" id="proses">PROSES</button>
+            </div>
+          </div>
+        </div>
+        <div class="bg-cyan-500 my-6 lg:my-0 lg:h-screen lg:w-1/3 h-96 lg:rounded-l-2xl shadow-sm shadow-slate-500">
+          <h2 class="py-4 mt-4 text-center font-extrabold text-3xl text-white">
+            Daftar Harga<sub>/kg</sub>
+          </h2>
+          <div
+            class="flex flex-wrap w-auto bg-white mx-4 h-20 my-4 rounded-full shadow-sm shadow-sky-900 border-solid border-sky-400 border-4">
+
+            <div class="flex flex-wrap w-1/2 items-center">
+              <img class="rounded-full h-16" src="media/baju1.jpg" alt="gambar pakaian" srcset="">
+              <p class="font-semibold text-xl">Pakaian</p>
+            </div>
+
+            <p class="font-semibold text-end w-1/2 my-5 pr-8 lg:pr-4 text-xl">20.000<sub>/kg</sub></p>
+          </div>
+          <div
+            class="flex flex-wrap w-auto bg-white mx-4 h-20 my-4 rounded-full shadow-sm shadow-sky-900 border-solid border-sky-400 border-4">
+            <div class="flex flex-wrap w-1/2 items-center ">
+              <img class="rounded-full h-16" src="media/simbut.jpg" alt="gambar selimut" srcset="">
+              <p class="font-semibold text-xl">Selimut</p>
+            </div>
+            <p class="font-semibold text-end w-1/2 my-5 pr-8 lg:pr-4 text-xl">40.000<sub>/kg</sub></p>
+          </div>
+          <div
+            class="flex flex-wrap w-auto bg-white mx-4 h-20 my-4 rounded-full shadow-sm shadow-sky-900 border-solid border-sky-400 border-4">
+            <div class="flex flex-wrap w-1/2 items-center">
+              <img class="rounded-full h-16" src="media/karpet1.jpg" alt="gambar karpet" srcset="">
+              <p class="font-semibold text-xl ">Permadani</p>
+            </div>
+            <p class="font-semibold text-end w-1/2 my-5 pr-8 lg:pr-4 text-xl">50.000<sub>/kg</sub></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="m-4 py-6 text-center font-semibold">
+        <h2 class="text-center font-extrabold text-3xl text-cyan-900">Langkah Transaksi</h2>
+        <div class="flex flex-wrap">
+          <div class="p-2 w-full md:w-1/3">
+            <div class=" w-full h-80 bg-white rounded-lg shadow-cyan-600 shadow-sm overflow-hidden">
+
+              <img class="mx-auto w-60" src="media/pilih.jpg" alt="gambar baju" srcset="">
+
+              <div class="p-4">
+                <p class="text-xl font-semibold text-cyan-900">Pilih Jenis Laundry</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 w-full md:w-1/3">
+            <div class=" w-full h-80 bg-white rounded-lg shadow-cyan-600 shadow-sm overflow-hidden">
+
+              <img class="mx-auto w-60" src="media/bayarLangkah.jpg" alt="gambar dompet" srcset="">
+
+              <div class="p-4">
+                <p class="text-xl font-semibold text-cyan-900">Lihat Keranjang dan Bayar dengan Dompet Digital</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 w-full md:w-1/3">
+            <div class="w-full h-80 bg-white rounded-lg shadow-cyan-600 shadow-sm overflow-hidden">
+
+              <img class="mx-auto w-60" src="media/kurir.jpg" alt="gambar mesin cuci" srcset="">
+
+              <div class="p-4">
+                <p class="text-xl font-semibold text-cyan-900">Laundry akan diambil oleh Kurir</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="bg-cyan-500 w-auto h-56">
+        <div class="pt-10 pl-16 ">
+          <h2 class="pb-4 font-bold text-3xl text-white">Contact Person</h2>
+          <p classs="pl-2 text-xl text-white">Inne Natya Septyani</p>
+          <p class="pl-2 text-xl text-white">Universitas Sebelas April Sumedang</p>
+          <p class="pl-2 text-xl text-white">Sumedang, Jawa Barat</p>
+        </div>
+
+      </div>
+    </div>
+
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="src/register.js"></script>
+  <script src="src/jquery-3.6.1.js"></script>
+
+  <script>
+    $(window).on("load", function () {
+
+      setTimeout(() => {
+        $("#intro").fadeOut("slow");
+      }, 2300)
+
+    })
+  </script>
+
+</html>

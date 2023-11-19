@@ -1,0 +1,22 @@
+{
+  "name": "Natya's Laundry",
+  "short_name": "laundry",
+  "description": "Bersihkan kotormu bersama kami.",
+  "icons": [
+    {
+      "src": "media/icons/icons.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "media/icons/icons-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1F3641",
+  "background_color": "#ffffff",
+  "prefer_related_applications": false
+}
