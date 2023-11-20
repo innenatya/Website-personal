@@ -4,12 +4,12 @@
   "description": "Bersihkan kotormu bersama kami.",
   "icons": [
     {
-      "src": "media/icons/icons.png",
+      "src": "media/mesin.jpg",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "media/icons/icons-192.png",
+      "src": "media/inne.jpg.jpeg",
       "sizes": "192x192",
       "type": "image/png"
     }
